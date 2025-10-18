@@ -5,3 +5,4 @@ var animation = bodymovin.loadAnimation({
   loop: true, // Optional
   autoplay: true, // Optional
 });
+

@@ -244,7 +244,7 @@ $(() => {
       i++;
     } else {
       clearInterval(intervalId);
-    }
+    }ㄹ
   }
 
   const intervalId = setInterval(typing, 200);

@@ -1,5 +1,5 @@
-body::before { content: ""; display: block; background: url(../img/bg/bg_Vector2.png) no-repeat center; background-size: cover; width: 100%; height: 1500px; position: absolute; top: 0; z-index: -5; }
-body::after { content: ""; display: block; background: url(../img/bg/bg_Vector.png) no-repeat center center/cover; background-size: cover; width: 100%; height: 1500px; position: absolute; top: 2500px; z-index: -5; }
+body::before { content: ""; display: block; background: url(../imges/) no-repeat center; background-size: cover; width: 100%; height: 1500px; position: absolute; top: 0; z-index: -5; }
+body::after { content: ""; display: block; background: url(../imges/) no-repeat center center/cover; background-size: cover; width: 100%; height: 1500px; position: absolute; top: 2500px; z-index: -5; }
 .wrap { overflow: hidden; width: 100%; height: 100%; }
 
 /* header */
@@ -30,11 +30,11 @@ main { padding-top: 4vw; }
 #top { display: flex; align-items: center; justify-content: center; margin: auto; }
 
 .card { width: 30vw; height: 45vw; margin: auto; box-shadow: 0 70px 63px -60px #a3a3a3; transform-style: preserve-3d; /* transform-style: preserve-3d; - 하위에 있는 자손도 모두 3d로 배치하겠다 기본값은 flat */ transition: transform 0.05s linear; border-radius: 30vw; }
-.card .thumb { background: #c3dff0 url(../img/1.jpg) no-repeat bottom 0 center; width: 100%; height: 100%; background-size: 33vw; border-radius: 30vw; }
+.card .thumb { background: #c3dff0 url(../imges/1.jpg) no-repeat bottom 0 center; width: 100%; height: 100%; background-size: 33vw; border-radius: 30vw; }
 .card .thumb::after { background: #9bc8ff93; content: ""; display: block; position: absolute; left: -60px; top: 60px; width: 80%; height: 105%; z-index: -1; filter: blur(50px); border-radius: 30vw; }
 
 .card .img { display: block; width: 12vw; height: 4vw; position: absolute; transform: translateZ(80px); transform-style: preserve-3d; background: url(../img/icon/wave2.png) no-repeat center center/contain; }
-.card .img::after { background: url(../img/icon/wave2.png) no-repeat center center/contain; content: ""; display: block; position: absolute; left: -5px; top: 15px; width: 80%; height: 105%; z-index: -1; filter: blur(10px); opacity: 0.3; }
+.card .img::after { background: url(../imges/) no-repeat center center/contain; content: ""; display: block; position: absolute; left: -5px; top: 15px; width: 80%; height: 105%; z-index: -1; filter: blur(10px); opacity: 0.3; }
 
 .card .img.wave_top { top: 20%; left: -20%; }
 .card .img.wave_bot { bottom: 20%; left: 80%; }
@@ -69,7 +69,7 @@ main { padding-top: 4vw; }
 /* section about*/
 .section.about { margin-top: 4vw; margin-bottom: 15vw; }
 .section.about .inner { display: flex; justify-content: space-around; align-items: center; }
-.section.about .inner .photo { width: 40vw; height: 46vw; background: url(../img/1-1.jpg) center/30vw no-repeat; }
+.section.about .inner .photo { width: 40vw; height: 46vw; background: url(../imges/1-1.jpg) center/30vw no-repeat; }
 .section.about .inner .text { display: flex; flex-direction: column; gap: 3vw; font-size: 1.2vw; }
 .section.about .inner .text .t_text h3 { color: var(--primary); }
 
@@ -89,10 +89,10 @@ main { padding-top: 4vw; }
 .section.projects .pro_wrap li .img_hover { width: 100%; height: 30vw; overflow: hidden; position: relative; }
 
 .section.projects .pro_wrap li .img_hover img { width: 100%; }
-.section.projects .pro_wrap li:nth-child(1) .img_hover { background: url(../img/bg1.png) no-repeat top center/cover; }
-.section.projects .pro_wrap li:nth-child(2) .img_hover { background: url(../img/bg2.png) no-repeat top center/cover; }
-.section.projects .pro_wrap li:nth-child(3) .img_hover { background: url(../img/project/pro3.png) no-repeat top center/cover; }
-.section.projects .pro_wrap li:nth-child(4) .img_hover { background: url(../img/project/pro4.png) no-repeat center center/contain; background-size: 20vw 25vw; }
+.section.projects .pro_wrap li:nth-child(1) .img_hover { background: url(../imges/bg1.png) no-repeat top center/cover; }
+.section.projects .pro_wrap li:nth-child(2) .img_hover { background: url(../imges/bg2.png) no-repeat top center/cover; }
+.section.projects .pro_wrap li:nth-child(3) .img_hover { background: url(../imges/bg3.png) no-repeat top center/cover; }
+.section.projects .pro_wrap li:nth-child(4) .img_hover { background: url(../imges/bg4.png) no-repeat top center/cover; }
 
 .section.projects li iframe { display: block; width: 40vw; height: 30vw; }
 
