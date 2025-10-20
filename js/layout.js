@@ -1,4 +1,49 @@
 $(() => {
+  // 커스텀 커서
+  const cursor = $('.cursor');
+  const follower = $('.cursor-follower');
+  let posX = 0,
+      posY = 0,
+      mouseX = 0,
+      mouseY = 0;
+
+  TweenMax.to({}, 0.016, {
+    repeat: -1,
+    onRepeat: function() {
+      posX += (mouseX - posX) / 9;
+      posY += (mouseY - posY) / 9;
+      
+      TweenMax.set(follower, {
+        css: {
+          left: posX - 4,
+          top: posY - 4
+        }
+      });
+      TweenMax.set(cursor, {
+        css: {
+          left: mouseX - 10,
+          top: mouseY - 10
+        }
+      });
+    }
+  });
+
+  $(document).on('mousemove', function(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  $('a').on({
+    'mouseenter': function() {
+      cursor.addClass('active');
+      follower.addClass('active');
+    },
+    'mouseleave': function() {
+      cursor.removeClass('active');
+      follower.removeClass('active');
+    }
+  });
+
   // // // 상단 스크롤 게이지 바
   let txt = $(".txt");
   let bar = $(".progress .bar");
@@ -43,14 +88,25 @@ $(() => {
     $(this).prev(".su_button_circle").addClass("desplode-circle");
   });
 
-  // top text
-  $(".title_rol").bxSlider({
-    mode: "vertical",
-    auto: true,
-    controls: false,
-    pager: false,
-    pause: 1000,
-  });
+  // 자동 텍스트 슬라이더
+  function initTitleRol() {
+    const titles = $('.title_rol .rol');
+    let currentIndex = 0;
+    
+    // 초기 상태 설정
+    titles.removeClass('active');
+    $(titles[currentIndex]).addClass('active');
+
+    // 3초마다 다음 텍스트로 전환
+    setInterval(() => {
+      $(titles[currentIndex]).removeClass('active');
+      currentIndex = (currentIndex + 1) % titles.length;
+      $(titles[currentIndex]).addClass('active');
+    }, 3000);
+  }
+
+  // DOM이 준비되면 슬라이더 초기화
+  initTitleRol();
 
   // // // loop text
   $(".text_loop").bxSlider({
