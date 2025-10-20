@@ -1,6 +1,6 @@
 /* cursor */
 body { cursor: none; }
-.cursor { width: 40px; height: 40px; background: #8954ff80; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.2s ease; }
+.cursor { width: 50px; height: 50px; background: #8954ff80; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.2s ease; }
 .cursor-follower { width: 8px; height: 8px; background: #8954ff; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s ease; }
 a:hover ~ .cursor { transform: scale(1.5); }
 body::before { content: ""; display: block; background: no-repeat center; background-size: cover; width: 100%; height: 1500px; position: absolute; top: 0; z-index: -5; }
@@ -27,7 +27,7 @@ header nav ul > li > a { padding: 0 2vw; font-size: 1.2vw; }
 
 /* section home */
 main { padding-top: 4vw; }
-.section.home { background: url(../imges/light.png) no-repeat center center; }
+.section.home { margin-top: 3vw; margin-bottom: 8vw; }
 .section.home .text { width: 100%; text-align: center; }
 .section.home .text .title_rol { width: 100%; height: 3vw; position: relative; overflow: hidden; }
 .section.home .text .title_rol .rol { width: 100%; height: 3vw; font-size: 2vw; font-weight: 700; color: var(--primary); position: absolute; opacity: 0; transform: translateX(100%); transition: transform 0.5s ease,opacity 0.5s ease; white-space: nowrap; }
