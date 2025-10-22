@@ -3,16 +3,16 @@ $(() => {
   const cursor = $('.cursor');
   const follower = $('.cursor-follower');
   let posX = 0,
-      posY = 0,
-      mouseX = 0,
-      mouseY = 0;
+    posY = 0,
+    mouseX = 0,
+    mouseY = 0;
 
   TweenMax.to({}, 0.016, {
     repeat: -1,
-    onRepeat: function() {
+    onRepeat: function () {
       posX += (mouseX - posX) / 9;
       posY += (mouseY - posY) / 9;
-      
+
       TweenMax.set(follower, {
         css: {
           left: posX - 4,
@@ -28,17 +28,17 @@ $(() => {
     }
   });
 
-  $(document).on('mousemove', function(e) {
+  $(document).on('mousemove', function (e) {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
 
   $('a').on({
-    'mouseenter': function() {
+    'mouseenter': function () {
       cursor.addClass('active');
       follower.addClass('active');
     },
-    'mouseleave': function() {
+    'mouseleave': function () {
       cursor.removeClass('active');
       follower.removeClass('active');
     }
@@ -92,7 +92,7 @@ $(() => {
   function initTitleRol() {
     const titles = $('.title_rol .rol');
     let currentIndex = 0;
-    
+
     // 초기 상태 설정
     titles.removeClass('active');
     $(titles[currentIndex]).addClass('active');
@@ -282,9 +282,8 @@ $(() => {
     let y = -($(window).innerHeight() / 2 - e.pageY) / 100;
     o.attr("style", `transform : rotateY(${x}deg) rotateX(${y}deg)`);
     o2.attr({
-      style: `transform: rotateY(${
-        e * 0.5
-      }deg) rotateX(${y}deg) translateZ(20px) translateX(${y * 1.5}px)`,
+      style: `transform: rotateY(${e * 0.5
+        }deg) rotateX(${y}deg) translateZ(20px) translateX(${y * 1.5}px)`,
     });
   });
 
@@ -300,7 +299,7 @@ $(() => {
       i++;
     } else {
       clearInterval(intervalId);
-    }ㄹ
+    } ㄹ
   }
 
   const intervalId = setInterval(typing, 200);
@@ -311,6 +310,8 @@ $(() => {
     let box_R = $(".pro_wrap li:nth-child(2)");
     let box_L2 = $(".pro_wrap li:nth-child(3)");
     let box_R3 = $(".pro_wrap li:nth-child(4)");
+    let box_L3 = $(".pro_wrap li:nth-child(5)");
+    let box_R4 = $(".pro_wrap li:nth-child(6)");
 
     if (checkVisible($(".section.projects")) && !isVisiblePro) {
       box_L.delay(300).queue(function (next) {
@@ -342,6 +343,20 @@ $(() => {
         });
         next();
       });
+      box_L3.delay(300).queue(function (next) {
+        $(this).css({
+          transform: "translateY(0)",
+          transition: "2.5s",
+        });
+        next();
+      });
+      box_R4.delay(300).queue(function (next) {
+        $(this).css({
+          transform: "translateY(0)",
+          transition: "3s",
+        });
+        next();
+      });
       isVisiblePro = true;
     } else if (!checkVisible($(".section.projects")) && isVisiblePro) {
       box_L.css({
@@ -357,6 +372,14 @@ $(() => {
         transition: "0.5s",
       });
       box_R3.css({
+        transform: "translateY(240%)",
+        transition: "0.5s",
+      });
+      box_L3.css({
+        transform: "translateY(240%)",
+        transition: "0.5s",
+      });
+      box_R4.css({
         transform: "translateY(240%)",
         transition: "0.5s",
       });
