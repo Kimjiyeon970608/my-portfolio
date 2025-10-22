@@ -311,7 +311,6 @@ $(() => {
     let box_L2 = $(".pro_wrap li:nth-child(3)");
     let box_R3 = $(".pro_wrap li:nth-child(4)");
     let box_L3 = $(".pro_wrap li:nth-child(5)");
-    let box_R4 = $(".pro_wrap li:nth-child(6)");
 
     if (checkVisible($(".section.projects")) && !isVisiblePro) {
       box_L.delay(300).queue(function (next) {
@@ -350,13 +349,6 @@ $(() => {
         });
         next();
       });
-      box_R4.delay(300).queue(function (next) {
-        $(this).css({
-          transform: "translateY(0)",
-          transition: "3s",
-        });
-        next();
-      });
       isVisiblePro = true;
     } else if (!checkVisible($(".section.projects")) && isVisiblePro) {
       box_L.css({
@@ -376,10 +368,6 @@ $(() => {
         transition: "0.5s",
       });
       box_L3.css({
-        transform: "translateY(240%)",
-        transition: "0.5s",
-      });
-      box_R4.css({
         transform: "translateY(240%)",
         transition: "0.5s",
       });
